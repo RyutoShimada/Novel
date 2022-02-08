@@ -24,7 +24,7 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 for (var col = 0; col < d[row].Length; col++)
                 {
-                    Debug.Log("[" + row + "][" + col + "]=" + d[row][col]);
+                    //Debug.Log("[" + row + "][" + col + "]=" + d[row][col]);
                 }
             }
         }

@@ -21,13 +21,13 @@ public class GSSReader : MonoBehaviour
     IEnumerator GetFromWeb()
     {
         IsLoading = true;
-        Debug.Log(IsLoading);
+        //Debug.Log(IsLoading);
         var tqx = "tqx=out:csv";
         var url = "https://docs.google.com/spreadsheets/d/1m-iHoJvDwpDzamZDM3ZLzJknMdIiF6dYdpWiagI7JRQ/edit?usp=sharing";// + SheetID + "/gviz/tq?" + tqx + "&sheet=" + SheetName;
         UnityWebRequest request = UnityWebRequest.Get(url);
         yield return request.SendWebRequest();
         IsLoading = false;
-        Debug.Log(IsLoading);
+        //Debug.Log(IsLoading);
         //var protocol_error = request.result == UnityWebRequest.Result.ProtocolError ? true : false;
         //var connection_error = request.result == UnityWebRequest.Result.ConnectionError ? true : false;
         //if (protocol_error || connection_error)
