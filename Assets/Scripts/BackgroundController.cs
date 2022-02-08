@@ -11,12 +11,12 @@ public class BackgroundController : MonoBehaviour
 
     public void StartFade()
     {
-        StartCoroutine(Fade(_fadeImage.gameObject));
+        StartCoroutine(Fade(_fadeImage));
     }
 
     public void StartSwitch()
     {
-        StartCoroutine(Fade(_switchImage.gameObject));
+        StartCoroutine(Fade(_switchImage));
     }
 
     IEnumerator Timer()
@@ -30,10 +30,9 @@ public class BackgroundController : MonoBehaviour
         }
     }
 
-    IEnumerator Fade(GameObject go)
+    IEnumerator Fade(Image img)
     {
-        Image i = go.GetComponent<Image>();
-        Color c = i.color;
+        Color c = img.color;
 
         if (_fadeTime <= 0)
         {
@@ -47,7 +46,7 @@ public class BackgroundController : MonoBehaviour
             while (c.a > 0)
             {
                 c.a -= Time.deltaTime / _fadeTime;
-                i.color = c;
+                img.color = c;
                 yield return null;
             }
         }
@@ -56,9 +55,14 @@ public class BackgroundController : MonoBehaviour
             while (c.a < 1)
             {
                 c.a += Time.deltaTime / _fadeTime;
-                i.color = c;
+                img.color = c;
                 yield return null;
             }
         }
+    }
+
+    IEnumerator Switch(Image[] imgs)
+    {
+        yield return null;
     }
 }
